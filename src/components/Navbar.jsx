@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="absolute top-0 left-0 w-full z-50">
+    <nav className="fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
         {/* Logo */}
        <h1 className="text-white text-sm tracking-[0.3em] font-light">

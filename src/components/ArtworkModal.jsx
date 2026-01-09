@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
+import PageTransition from "../components/PageTransition";
+
 
 export default function ArtworkModal({ artwork, onClose }) {
   if (!artwork) return null;
 
   return (
+    <PageTransition>
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -32,5 +35,6 @@ export default function ArtworkModal({ artwork, onClose }) {
         </div>
       </motion.div>
     </div>
+    </PageTransition>
   );
 }
