@@ -4,13 +4,14 @@ import GalleryGrid from "./components/GalleryGrid";
 import ArtworkPage from "./pages/ArtworkPage";
 import Navbar from "./components/Navbar";
 
-function App() {
+export default function App() {
   const location = useLocation();
 
   return (
     <>
+      {/* NAVBAR MUST BE HERE */}
       <Navbar />
-      
+
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<GalleryGrid />} />
@@ -20,5 +21,3 @@ function App() {
     </>
   );
 }
-
-export default App;
