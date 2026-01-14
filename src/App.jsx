@@ -3,6 +3,11 @@ import { AnimatePresence } from "framer-motion";
 import GalleryGrid from "./components/GalleryGrid";
 import ArtworkPage from "./pages/ArtworkPage";
 import Navbar from "./components/Navbar";
+import Exhibitions from "./pages/Exhibitions";
+import ExhibitionPage from "./pages/ExhibitionPage";
+import Artists from "./pages/Artists";
+import ArtistPage from "./pages/ArtistPage";
+import Visit from "./pages/Visit";
 
 /* Simple placeholder pages */
 function Placeholder({ title }) {
@@ -31,18 +36,12 @@ export default function App() {
           <Route path="/artwork/:id" element={<ArtworkPage />} />
 
           {/* NAVBAR ROUTES */}
-          <Route
-            path="/exhibitions"
-            element={<Placeholder title="Exhibitions" />}
-          />
-          <Route
-            path="/artists"
-            element={<Placeholder title="Artists" />}
-          />
-          <Route
-            path="/visit"
-            element={<Placeholder title="Visit Us" />}
-          />
+          <Route path="/artwork/:id" element={<ArtworkPage />} />
+          <Route path="/exhibitions" element={<Exhibitions />} />
+          <Route path="/artists" element={<Artists />} />
+          <Route path="/visit" element={<Visit />} />
+          <Route path="/artists/:id" element={<ArtistPage />} />
+          <Route path="/exhibitions/:id" element={<ExhibitionPage />} />
         </Routes>
       </AnimatePresence>
     </>
