@@ -1,18 +1,21 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../assets/hero.jpg";
 
-
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen overflow-hidden">
+      
       {/* Background image */}
-     <img
+      <img
         src={heroImage}
         alt="Gallery hero"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Single soft overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
@@ -31,12 +34,16 @@ export default function Hero() {
             Discover works from emerging and established artists around the world.
           </p>
 
-          <a
-            href="#gallery"
-            className="inline-block border border-white/40 px-10 py-4 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition"
-          >
+          <button
+            onClick={() =>
+    document
+      .getElementById("gallery")
+      ?.scrollIntoView({ behavior: "smooth" })
+  }
+  className="inline-block border border-white/40 px-10 py-4 text-sm tracking-widest uppercase hover:bg-white hover:text-black transition"
+>
             Explore Collection
-          </a>
+          </button>
         </div>
       </motion.div>
     </section>

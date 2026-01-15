@@ -59,17 +59,17 @@ export default function GalleryGrid() {
     <>
       <Hero />
 
-      <section className="min-h-screen bg-[#0e0e0e] pt-24 text-white">
+      <section id="gallery" className="min-h-screen bg-[#0e0e0e] pt-24 text-white">
         <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-[250px_1fr] gap-16">
           <FilterSidebar />
 
           <div className="columns-1 md:columns-3 gap-10 space-y-10">
             {filtered.map((art) => (
               <div
-                key={art.id}
-                onClick={() => navigate(`/artwork/${art.id}`)}
-                className="break-inside-avoid cursor-pointer group"
-              >
+    key={art.id}   // ✅ MUST be unique
+    onClick={() => navigate(`/artwork/${art.id}`, { state: art })}
+    className="relative break-inside-avoid cursor-pointer group overflow-hidden"
+  >
                 <img
                   src={art.image}
                   alt={art.artist}
